@@ -1,0 +1,21 @@
+{
+  "-McNPVckzYC-q23I1S0b" : {
+    "appointmenttime" : "23:09",
+    "checkin" : "23:06",
+    "checkout" : "23:09",
+    "day" : "Tuesday",
+    "department" : "Orthopedic",
+    "doctor" : "Dr. Ritu karki",
+    "patienttype" : "New"
+  },
+  "-McNQm63QvvmH2EE1zOg" : {
+    "appointmenttime" : "01:11",
+    "checkin" : "01:09",
+    "checkout" : "11:15",
+    "day" : "Thursday",
+    "department" : "Orthopedic",
+    "doctor" : "Dr.Borendra Singh",
+    "name" : "Ritu karki",
+    "patienttype" : "New"
+  }
+}

@@ -1,0 +1,190 @@
+body{
+    background-color: snow;
+   
+}
+.header{
+    background-color: snow;
+
+   
+}
+.container-top{
+    display: flex;
+}
+ .container-top img{
+    background-size: cover;
+    position: relative;
+    height: 800px;
+    width: 100%;
+}
+.container-top h1{
+    position:absolute; 
+    margin-top:8%;
+    margin-left: 30%;
+    font-size: 50px;
+}
+.container-top h2{
+    position:absolute; 
+    margin-top: 30%;
+    margin-left: 30%;
+    color: snow;
+    
+}
+.container-top h2 span{
+    margin-left: 45%;
+}
+.container-top h3{
+    position:absolute; 
+    margin-top: 35%;
+    margin-left:47%;
+    font-size: 25px;
+    color: red;
+}
+.container-top h3 span1{
+    color: yellow;
+}
+.container-top h3 span2{
+    color: black;
+}
+.container-top button{
+    position: absolute;
+    margin-left: 80%;
+    margin-top: 3%;
+    height: 45px;
+    width: 100px;
+    font-size: 16px;
+    background-color: red;
+}
+button a{
+text-decoration: none;
+color: snow;
+font-weight: bolder;
+}
+
+/*container-middle*/
+.header .container-middle{
+    display: flex;
+    height: 900px;
+    margin-top: 10%;
+    position: relative;
+    
+}
+.header .container-middle .information{
+    display: flex;
+    flex-direction: column;
+    height: 850px;
+    width: 95%;
+    background-color: snow;
+     margin-top:3%;
+   margin-left: 3%;
+filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+}
+.header .container-middle .information .row-1{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  
+    flex: 1;
+}
+.header .container-middle .information .row-1 .one,.two,.three{
+    background-color:#73DBE1 ;
+    height: 227px;
+    width: 227px;
+  margin-left: 10%;
+  margin-top: 5%;
+  filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+}
+.header .container-middle .information .row-2{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  
+    flex: 1;
+}
+.header .container-middle .information .row-2 .one1,.two1,.three1{
+    background-color:#73DBE1 ;
+    height: 227px;
+    width: 227px;
+  margin-left: 10%;
+  margin-bottom: 10%;
+  filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+}
+/*container-bottom*/
+.header .container-bottom{
+    display: flex;
+    height:500px;
+    margin-top: 7%;
+    
+}
+
+.header .container-bottom .text-pts{
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 95%;
+    background-color: snow;
+     margin-top:3%;
+   margin-left: 3%;
+filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+}
+.header .container-bottom .text-pts h1{
+color: #1DD7E3 ;
+ margin-left: 5%;
+}
+.header .container-bottom .text-pts h2{
+  color: #1DD7E3 ; 
+   margin-left: 5%; 
+ 
+}
+.header .container-bottom .text-pts p{
+    margin-left: 5%;
+    margin-top: 3%;
+ color: #181B1C;
+ font-weight: bolder;
+ font-size: 14px;
+ width: 100%;
+
+}
+.footer{
+    margin-top: 5%;
+    height: 60px;
+    width: 100%;
+    background: black;
+    text-align: center;
+  
+}
+.footer p{
+    margin-top: 5%;
+      font-size: 12px;
+    color: snow;
+}
+.footer p span{
+    color: red;
+}
+.one img{
+    height: 180px;
+    width: 180px;
+ margin: 20px 20px 20px 20px;
+}
+.two img{
+    height: 180px;
+    width: 180px;
+ margin: 20px 20px 20px 20px;
+}
+.three img{
+    height: 180px;
+    width: 180px;
+ margin: 20px 20px 20px 20px;
+}
+.one1 img{
+    height: 180px;
+    width: 180px;
+ margin: 20px 20px 20px 20px;
+}
+.two1 img{
+    height: 170px;
+    width: 170px;
+ margin: 25px 25px 25px 25px;
+}
+.three1 img{
+    height: 170px;
+    width: 170px;
+ margin: 25px 25px 25px 25px;
+}

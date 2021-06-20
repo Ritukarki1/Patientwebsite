@@ -1,0 +1,65 @@
+.hello{
+   width: 100%;
+    position: relative;
+    background-color: whitesmoke;
+    height: 100%;
+  
+}
+.hello-1{
+    margin-left: 10%;
+    margin-right: 15%;
+    height: 100%; 
+}
+.hello h1{
+    margin-left: 15%;
+}
+.row1{
+    margin-left: 0px;
+}
+input{
+    margin-top: 3%;
+}
+input .form-control{
+    height: 50px;
+    width: 200px;
+    border: 2px solid gray;
+    background-color: lightgray;
+}
+
+.btn-1{
+    background-color: skyblue;
+    height: 40px;
+    width: 130px;
+    font-size: 14px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.form-group h3{
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.form-group{
+    margin-left: 2px;
+}
+.fourty{
+    width: 100%;
+}
+
+.detailtable {
+  margin-left: 0px;
+    width: 100%;
+}
+
+
+.id{
+    width: 400px;
+    margin-left: 5%;
+}
+.form-groupdetail{
+    margin-left: 2px;
+}
+.hi, .number, .num1, .hi1{
+    margin-bottom: 10px;
+}
+
