@@ -23,9 +23,9 @@ const HistoryForm = (props) => {
         })
         else
         setValues({
-            ...props.detailObjects[props.currentId]
+            ...props.historyObjects[props.currentId]
         })
-    }, [props.currentId, props.detailObjects])
+    }, [props.currentId, props.historyObjects])
     const handleInputChange = e=>{
         var {name, value} = e.target
 
@@ -43,6 +43,7 @@ props.addorEdit(values)
 
 
     return (
+        <>
         <div className="historyid">
         <form autoComplete="off" onSubmit={handleFormSubmit}>
 <div className="form-group input-group">
@@ -108,7 +109,9 @@ props.addorEdit(values)
     <button className="btn-1"><a href="/patient">Ok</a></button>
   
 </div>
-        </form></div>
+        </form>
+        </div>
+       </>
     )
 }
 

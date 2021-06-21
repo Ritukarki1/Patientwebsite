@@ -12,9 +12,36 @@ box-sizing: border-box;
   display: flex;
   flex-direction: column;
 }
+.hello .navone{
+ width: 100%;
+ border: 1px solid grey;
+ background: rgb(247, 244, 244);
 
+  
+}
+.hello .navone a{
+  color: rgb(107, 104, 105);
+}
 
+.hello .navone .a,.b {
+ 
+  margin-top: 0px;
+  width: 120px;
+  background: transparent;
+  border: transparent;
+ height: 30px;
 
+ color: rgb(107, 104, 105);
+
+}
+.hello .navone .a {
+  margin-left: 10%;
+}
+
+.hello .cross{
+  margin-left: 93%;
+  margin-top: 2%;
+}
 
 
 .ai:hover{
@@ -102,7 +129,9 @@ table {
 
   
 }
-
+.hello h2{
+  margin-left: 20%;
+}
  th {
   border: 1px solid #353333;
   text-align: left;

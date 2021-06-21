@@ -25,9 +25,9 @@ const VisitDetail = (props) => {
         })
         else
         setValues({
-            ...props.detailObjects[props.currentId]
+            ...props.visitObjects[props.currentId]
         })
-    }, [props.currentId, props.detailObjects])
+    }, [props.currentId, props.visitObjects])
     const handleInputChange = e=>{
         var {name, value} = e.target
 

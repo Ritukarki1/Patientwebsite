@@ -4,6 +4,7 @@ import Fire from '../Firebase';
 import '../detail/detail.css'
 import { useState, useEffect} from 'react'
 import { GiCrossMark} from 'react-icons/gi'
+import {ImCross} from 'react-icons/im'
 
 const Detail = () => {
 
@@ -65,6 +66,7 @@ const[searchTerm, setSearchTerm]= useState('');
     return (
         <React.Fragment>
         <div className="hello">
+            <a href="/patient"><ImCross className="cross"/></a>
             <div className="hello-1">
         <h1>Personal Information</h1>
        
@@ -79,6 +81,7 @@ const[searchTerm, setSearchTerm]= useState('');
               <table striped bordered hover size="sm">
                   <thead >
                      <tr>
+                     <th>ID</th>
                      <th>First Name</th>
                          <th rowSpan="10">Middle Name</th>
                          <th>Last Name</th>
@@ -102,6 +105,7 @@ const[searchTerm, setSearchTerm]= useState('');
                       {
                           Object.keys(detailObjects).map(id=> {
                               return<tr key={id}>
+                                  <td>{detailObjects[id].id}</td>
                                     <td>{detailObjects[id].fullName}</td>
                                   <td>{detailObjects[id].mname}</td>
                                   <td>{detailObjects[id].lnane}</td>

@@ -35,8 +35,8 @@ const Logina = () => {
         <div className="login">
             {(user.email !="") ? (
                 <div className="welcome">
-                   <h2>Welcome, <span>{user.name}</span> </h2>
-                   <button className="addbutton"><a href="/patient">OK lets enter. Click Here</a></button>
+                   <h2 >Welcome, <span>{user.name}</span> </h2>
+                   <button className="addbutton" ><a href="/patient">OK lets enter. Click Here</a></button>
                 </div>
             ) : (
 <LoginForm  Login={Login} error={error} />

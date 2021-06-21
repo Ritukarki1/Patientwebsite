@@ -1,0 +1,14 @@
+.hello{
+  
+    position: relative;
+    background-color: whitesmoke;
+    height: 100%;
+  
+}
+.hello .row{
+    display: flex;
+    flex-direction: row;
+}
+.oddetail .h11 .form-control{
+    width: 200px;
+}

@@ -3,20 +3,20 @@ import VisitDetail from './VisitDetail';
 import Fire from '../Firebase';
 import '../patient/patient.css'
 import { useState, useEffect} from 'react'
-
+import {ImCross} from 'react-icons/im'
 const Visit = () => {
 
-    var[detailObjects, setDetailObjects] = useState({})
+    var[visitObjects, setVisitObjects] = useState({})
 var[currentId, setcurrentId] = useState('')
 const[searchTerm, setSearchTerm]= useState('');
     useEffect(()=>{
-        Fire.child('detail').on('value', snapshot=>{
+        Fire.child('visit Detail').on('value', snapshot=>{
     if(snapshot.val()!=null)
-    setDetailObjects({
+    setVisitObjects({
         ...snapshot.val()
     })
     else
-    setDetailObjects({})
+    setVisitObjects({})
 })
     },[])
 
@@ -25,7 +25,7 @@ const[searchTerm, setSearchTerm]= useState('');
 
     const addorEdit = obj =>{
         if(currentId=='')
-        Fire.child('detail').push(
+        Fire.child('visit Detail').push(
             obj,
             err => {
                 if (err)
@@ -36,7 +36,7 @@ const[searchTerm, setSearchTerm]= useState('');
             }
         )
         else
-        Fire.child('detail/'+currentId).set(
+        Fire.child('visit Detail/'+currentId).set(
             obj,
             err => {
                 if (err)
@@ -49,7 +49,7 @@ const[searchTerm, setSearchTerm]= useState('');
 
    const onDelete = key=>{
        if(window.confirm('Are you sure to delete this record')){
-        Fire.child('detail/'+key).remove(
+        Fire.child('visit Detail/'+key).remove(
         
             err => {
                 if (err)
@@ -64,12 +64,20 @@ const[searchTerm, setSearchTerm]= useState('');
     return (
         <React.Fragment>
         <div className="hello">
+          
+            <div className="navone">
+                    <button className="a"><a href="/Od">Wait Detail</a></button>
+                    <button className="b"><a href="/ts">Emergency</a> </button>
+                    </div>
+                    <a href="/patient"><ImCross className="cross"/></a>    
             <div className="hello-1">
+                
+             
            <div className="visit">
        <h2>Patient Visit Detail</h2></div>
         <div className="row ">
             <div className="col-md-8 offset-md-2">
-            <VisitDetail {...({addorEdit, currentId, detailObjects})} term={searchTerm}
+            <VisitDetail {...({addorEdit, currentId, visitObjects})} term={searchTerm}
            />
             </div>
            <div className="col-md-7">

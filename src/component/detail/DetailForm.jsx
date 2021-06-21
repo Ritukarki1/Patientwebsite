@@ -17,6 +17,7 @@ const DetailForm = (props) => {
        address: '',
        district: '',
        province: '',
+       id: '',
       
        sex:''
     }
@@ -51,7 +52,13 @@ props.addorEdit(values)
     return (
         <form autoComplete="off" onSubmit={handleFormSubmit}>
 <div className="form-groupdetail">
-   
+<div className="hi1">
+        <label htmlFor="FirstName"> Patient ID</label><br/>
+        
+        <input className="form-control" type="number"
+        name="id" value={values.id}
+        onChange={handleInputChange} required/>
+    </div>
 <div className="hi">
              <div>
         <label htmlFor="FirstName">First Name</label><br/>

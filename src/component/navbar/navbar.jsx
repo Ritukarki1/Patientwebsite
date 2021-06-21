@@ -11,7 +11,7 @@ const Navbar = () => {
             <div className="logo">
                 <h2><FaHeartbeat/>PTS</h2>
             </div>
-             <NavLink className="linka" exact activeClassName="b"  to = "/patient">Dashboard</NavLink>
+             <NavLink className="linka" exact activeClassName="a"  to = "/patient">Dashboard</NavLink>
             <NavLink className="link" exact activeClassName="a"  to = "/patient">Patient</NavLink>
             <NavLink className="link" exact activeClassName="a"  to = "/treatment">Appointment</NavLink>
             <NavLink className="linkb" exact activeClassName="a"  to = "/new">History</NavLink>

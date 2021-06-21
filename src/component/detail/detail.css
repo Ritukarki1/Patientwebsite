@@ -1,5 +1,5 @@
 .hello{
-   width: 100%;
+  
     position: relative;
     background-color: whitesmoke;
     height: 100%;
@@ -63,3 +63,67 @@ input .form-control{
     margin-bottom: 10px;
 }
 
+.footerhistory{
+    color: snow;
+    border: 2px solid black;
+    margin-top: 2%;
+    width: 1230px;
+    margin-bottom: 0px;
+}
+.footerhistory button{
+    height: 40px;
+    width: 120px;
+}
+.od .row {
+    display: flex;
+    flex-direction: row;
+}
+.od{
+    position: relative;
+    background-color: whitesmoke;
+    height: 800px;
+width: 100%;
+}
+.od .row1{
+    margin-left: 10%;
+}
+.od .detailtable{
+    width: 50%;
+    margin-left: 20%;
+}
+.od .btn-1{
+    background-color: skyblue;
+    height: 40px;
+    width: 100px;
+   
+}
+.od [type="submit"]{
+    background-color: skyblue;
+    height: 40px;
+    width: 100px;
+   
+}
+.od th {
+    border: 1px solid #353333;
+    text-align: left;
+    padding: 8px;
+    background-color: rgb(156, 154, 154);
+    height: 50px;
+    color: rgb(248, 241, 241);
+    font-size: 12px;
+    width: 60px;
+  }
+  
+ .od td{
+    border: 1px solid rgb(156, 154, 154);
+    text-align: left;
+    padding: 8px;
+    background-color: rgb(237, 237, 245);
+    height: 20px;
+  }
+
+  .ts{
+      height: 1000px;
+      position: relative;
+      background: snow;
+  }

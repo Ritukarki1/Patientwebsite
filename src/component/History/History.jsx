@@ -3,20 +3,21 @@ import HistoryForm from './HistoryForm';
 import Fire from '../Firebase';
 import '../detail/detail.css'
 import { useState, useEffect} from 'react'
+import {ImCross} from 'react-icons/im'
 
 const History = () => {
 
-    var[detailObjects, setDetailObjects] = useState({})
+    var[historyObjects, setHistoryObjects] = useState({})
 var[currentId, setcurrentId] = useState('')
 const[searchTerm, setSearchTerm]= useState('');
     useEffect(()=>{
-        Fire.child('detail').on('value', snapshot=>{
+        Fire.child('History').on('value', snapshot=>{
     if(snapshot.val()!=null)
-    setDetailObjects({
+    setHistoryObjects({
         ...snapshot.val()
     })
     else
-    setDetailObjects({})
+    setHistoryObjects({})
 })
     },[])
 
@@ -25,7 +26,7 @@ const[searchTerm, setSearchTerm]= useState('');
 
     const addorEdit = obj =>{
         if(currentId=='')
-        Fire.child('detail').push(
+        Fire.child('History').push(
             obj,
             err => {
                 if (err)
@@ -36,7 +37,7 @@ const[searchTerm, setSearchTerm]= useState('');
             }
         )
         else
-        Fire.child('detail/'+currentId).set(
+        Fire.child('History/'+currentId).set(
             obj,
             err => {
                 if (err)
@@ -49,7 +50,7 @@ const[searchTerm, setSearchTerm]= useState('');
 
    const onDelete = key=>{
        if(window.confirm('Are you sure to delete this record')){
-        Fire.child('detail/'+key).remove(
+        Fire.child('History/'+key).remove(
         
             err => {
                 if (err)
@@ -64,12 +65,13 @@ const[searchTerm, setSearchTerm]= useState('');
     return (
         <React.Fragment>
         <div className="hello">
+        <a href="/patient"><ImCross  className="cross"/></a>
             <div className="hello-1">
            
         <h1>Medical History</h1>
         <div className="row">
             <div className="col-md-8 offset-md-2">
-            <HistoryForm {...({addorEdit, currentId, detailObjects})} term={searchTerm}
+            <HistoryForm {...({addorEdit, currentId, historyObjects})} term={searchTerm}
            />
             </div>
            <div className="col-md-7">

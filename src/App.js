@@ -14,6 +14,8 @@ import Detail from './component/detail/Detail';
 import History from './component/History/History'
 import Visit from './component/visit Detail/Visit'
 import Logina from './component/adminlogin/login'
+import Od from './component/Od/Od'
+import Ts from './component/Treatment/Ts'
 
 function App() {
 
@@ -35,6 +37,8 @@ function App() {
   <Route exact path ="/detail" component={Detail}/>
   <Route exact path ="/History" component={History}/>
   <Route exact path ="/Visit" component={Visit}/>
+  <Route exact path ="/Od" component={Od}/>
+  <Route exact path ="/Ts" component={Ts}/>
  
  
   

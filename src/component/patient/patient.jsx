@@ -6,10 +6,10 @@ import { useState, useEffect} from 'react'
 import Detail from '../detail/Detail'
 import DetailForm from '../detail/DetailForm'
 import { AiOutlinePlus} from 'react-icons/ai'
-import JSON from '../detail.json'
 import {component} from 'react'
 import {MdSystemUpdateAlt} from 'react-icons/md'
 import axios from 'axios';
+import {ImCross} from 'react-icons/im'
 
 
 
@@ -147,8 +147,7 @@ const Patient = () => {
              </button></div>
              <div className="App">
 <div style={{ margin: '0 auto' }}>
-<input type="text" onChange={(event) =>handleSearch(event)} 
-placeholder="search"/>
+
 </div>
 <div style={{padding:10}}>
 {filteredData && ((value,index)=>{
@@ -163,10 +162,11 @@ return(
 })}
 </div></div>
         
-        <div className=" tablecontainer">
+        <div className=" tablecontainer">   
               <table id="myTable" class="sortable">
                   <thead >
                      <tr>
+                     <th>ID</th>
                      <th>First Name</th>
                          <th >Middle Name</th>
                          <th>Last Name</th>
@@ -193,6 +193,7 @@ return(
                           {
                           Object.keys(detailObjects).map(id=> {
                               return<tr key={id}>
+                                   <td>{detailObjects[id].id}</td>
                                     <td>{detailObjects[id].fullName}</td>
                                   <td>{detailObjects[id].mname}</td>
                                   <td>{detailObjects[id].lnane}</td>

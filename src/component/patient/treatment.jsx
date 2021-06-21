@@ -8,55 +8,61 @@ import VisitDetail from '../visit Detail/VisitDetail';
 
 
 const Treatment = () => {
-    var[detailObjects, setDetailObjects] = useState({})
-    var[currentId, setcurrentId] = useState('')
-        useEffect(()=>{
-            Fire.child('detail').on('value', snapshot=>{
-        if(snapshot.val()!=null)
-        setDetailObjects({
-            ...snapshot.val()
-        })
-        else
-        setDetailObjects({})
-    })
-        },[])
-        const addorEdit = obj =>{
-            if(currentId=='')
-            Fire.child('detail').push(
-                obj,
-                err => {
-                    if (err)
-                    console.log(err)
-                    else
-                    setcurrentId = ('')
-                
-                }
-            )
-            else
-            Fire.child('detail/'+currentId).set(
-                obj,
-                err => {
-                    if (err)
-                    console.log(err)
-                    else
-                    setcurrentId = ('')
-                }
-            )
-            }
     
-        const onDelete = key=>{
-            if(window.confirm('Are you sure to delete this record')){
-             Fire.child('detail/'+key).remove(
-             
-                 err => {
-                     if (err)
-                     console.log(err)
-                     else
-                     setcurrentId = ('')
-                 }
-             )
+    var[visitObjects, setVisitObjects] = useState({})
+var[currentId, setcurrentId] = useState('')
+const[searchTerm, setSearchTerm]= useState('');
+    useEffect(()=>{
+        Fire.child('visit Detail').on('value', snapshot=>{
+    if(snapshot.val()!=null)
+    setVisitObjects({
+        ...snapshot.val()
+    })
+    else
+    setVisitObjects({})
+})
+    },[])
+
+
+
+
+    const addorEdit = obj =>{
+        if(currentId=='')
+        Fire.child('visit Detail').push(
+            obj,
+            err => {
+                if (err)
+                console.log(err)
+                else
+                setcurrentId = ('')
+            
             }
+        )
+        else
+        Fire.child('visit Detail/'+currentId).set(
+            obj,
+            err => {
+                if (err)
+                console.log(err)
+                else
+                setcurrentId = ('')
+            }
+        )
         }
+
+   const onDelete = key=>{
+       if(window.confirm('Are you sure to delete this record')){
+        Fire.child('visit Detail/'+key).remove(
+        
+            err => {
+                if (err)
+                console.log(err)
+                else
+                setcurrentId = ('')
+            }
+        )
+       }
+   }
         
     return (
         <div className="treatment">
@@ -79,17 +85,17 @@ const Treatment = () => {
             </thead>
             <tbody>
                 {
-                    Object.keys(detailObjects).map(id=> {
+                    Object.keys(visitObjects).map(id=> {
                         return<tr key={id}>
-                             <td>{detailObjects[id].full}</td>
-                              <td>{detailObjects[id].checkin}</td>
-                            <td>{detailObjects[id].department}</td>
-                            <td>{detailObjects[id].doctor}</td>
-                             <td>{detailObjects[id].appointmenttime}</td>
-                              <td>{detailObjects[id].day}</td> 
-                              <td>{detailObjects[id].patienttype}</td>
-                              <td>{detailObjects[id].wait}</td>
-                              <td>{detailObjects[id].checkout}</td>  
+                             <td>{visitObjects[id].full}</td>
+                              <td>{visitObjects[id].checkin}</td>
+                            <td>{visitObjects[id].department}</td>
+                            <td>{visitObjects[id].doctor}</td>
+                             <td>{visitObjects[id].appointmenttime}</td>
+                              <td>{visitObjects[id].day}</td> 
+                              <td>{visitObjects[id].patienttype}</td>
+                              <td>{visitObjects[id].wait}</td>
+                              <td>{visitObjects[id].checkout}</td>  
                             <td>
                                 
                                 <a className="btn text-danger" >

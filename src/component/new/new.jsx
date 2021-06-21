@@ -8,21 +8,26 @@ import DetailForm from '../detail/DetailForm'
 
 
 const New = () => {
-    var[detailObjects, setDetailObjects] = useState({})
+    var[historyObjects, setHistoryObjects] = useState({})
     var[currentId, setcurrentId] = useState('')
+    const[searchTerm, setSearchTerm]= useState('');
         useEffect(()=>{
-            Fire.child('detail').on('value', snapshot=>{
+            Fire.child('History').on('value', snapshot=>{
         if(snapshot.val()!=null)
-        setDetailObjects({
+        setHistoryObjects({
             ...snapshot.val()
         })
         else
-        setDetailObjects({})
+        setHistoryObjects({})
     })
         },[])
+    
+    
+    
+    
         const addorEdit = obj =>{
             if(currentId=='')
-            Fire.child('detail').push(
+            Fire.child('History').push(
                 obj,
                 err => {
                     if (err)
@@ -33,7 +38,7 @@ const New = () => {
                 }
             )
             else
-            Fire.child('detail/'+currentId).set(
+            Fire.child('History/'+currentId).set(
                 obj,
                 err => {
                     if (err)
@@ -44,20 +49,20 @@ const New = () => {
             )
             }
     
-        const onDelete = key=>{
-            if(window.confirm('Are you sure to delete this record')){
-             Fire.child('detail/'+key).remove(
-             
-                 err => {
-                     if (err)
-                     console.log(err)
-                     else
-                     setcurrentId = ('')
-                 }
-             )
-            }
-        }
-        
+       const onDelete = key=>{
+           if(window.confirm('Are you sure to delete this record')){
+            Fire.child('History/'+key).remove(
+            
+                err => {
+                    if (err)
+                    console.log(err)
+                    else
+                    setcurrentId = ('')
+                }
+            )
+           }
+       }
+       
     return (
         <div className=" med">
             <h3>Medical History Of Patient</h3>
@@ -79,15 +84,15 @@ const New = () => {
             </thead>
             <tbody>
                 {
-                    Object.keys(detailObjects).map(id=> {
+                    Object.keys(historyObjects).map(id=> {
                         return<tr key={id}>
-                               <td>{detailObjects[id].id}</td>
-                              <td>{detailObjects[id].allergy}</td>
-                              <td>{detailObjects[id].name}</td>
-                            <td>{detailObjects[id].dose}</td>
-                            <td>{detailObjects[id].duration}</td>
-                             <td>{detailObjects[id].frequency}</td>
-                              <td>{detailObjects[id].diagnosis}</td> 
+                               <td>{historyObjects[id].id}</td>
+                              <td>{historyObjects[id].allergy}</td>
+                              <td>{historyObjects[id].name}</td>
+                            <td>{historyObjects[id].dose}</td>
+                            <td>{historyObjects[id].duration}</td>
+                             <td>{historyObjects[id].frequency}</td>
+                              <td>{historyObjects[id].diagnosis}</td> 
                                
                             <td>
                                 
