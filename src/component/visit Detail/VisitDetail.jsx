@@ -6,14 +6,15 @@ const VisitDetail = (props) => {
 
     
     const initialFieldValues = {
-        fullName:'',
+        full:'',
         checkin: '',
         department: '',
         doctor: '',
         appointmenttime: '',
         day: '',
         patienttype: '',
-        checkout: ''    
+        checkout: '' ,
+        wait: ''   
     }
     var [values, setValues] = useState(initialFieldValues)
 
@@ -49,10 +50,10 @@ props.addorEdit(values)
 <div className="detailtable">
              <div className="d">
                  <div className="d1">
-        <label htmlFor="FirstName">Patient Name</label><br/>
+        <label htmlFor="FirstName">Patient ID</label><br/>
         
-        <input className="form-control"
-        name="name" value={values.fullName}
+        <input className="form-control" type="number"
+        name="full" value={values.full}
         onChange={handleInputChange} required/>
     </div> 
 <div className="d2">

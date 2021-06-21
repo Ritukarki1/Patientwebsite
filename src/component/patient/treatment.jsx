@@ -72,6 +72,7 @@ const Treatment = () => {
                  <th>Department</th>
                  <th>Day</th>
                  <th>Patient Type</th>
+                 <th>Wait for</th>
                  <th>Check-out Time</th>
                  <th>Action</th>
                </tr>
@@ -80,13 +81,14 @@ const Treatment = () => {
                 {
                     Object.keys(detailObjects).map(id=> {
                         return<tr key={id}>
-                             <td>{detailObjects[id].fullName}</td>
+                             <td>{detailObjects[id].full}</td>
                               <td>{detailObjects[id].checkin}</td>
                             <td>{detailObjects[id].department}</td>
                             <td>{detailObjects[id].doctor}</td>
                              <td>{detailObjects[id].appointmenttime}</td>
                               <td>{detailObjects[id].day}</td> 
                               <td>{detailObjects[id].patienttype}</td>
+                              <td>{detailObjects[id].wait}</td>
                               <td>{detailObjects[id].checkout}</td>  
                             <td>
                                 
